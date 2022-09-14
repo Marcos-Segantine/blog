@@ -1,0 +1,10 @@
+.header__input {
+  width: 100%;
+  height: 35px;
+  color: var(--gray);
+}
+
+.header__inputSearch {
+  display: flex;
+  margin-left: 60px;
+}

@@ -1,0 +1,22 @@
+.verse {
+    width: 85%;
+}
+
+.verse p {
+    width: 85%;
+    max-width: 100%;
+    color: white;
+    margin-bottom: 1rem;
+    margin: .5rem 0 2rem 0;
+}
+
+.verse span {
+    font-weight: bold;
+    color: white;
+}
+
+@media(min-width: 767px) {
+    .verse p {
+        max-width: 50%;
+    }
+}

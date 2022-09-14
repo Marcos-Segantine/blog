@@ -1,0 +1,14 @@
+.sources {
+    width: 85%;
+    margin: 5rem 0;
+}
+
+.sources ul {
+    list-style: disc;
+    color: var(--gray);
+    margin: 2rem 0 0 3rem;
+}
+
+.sources li {
+    margin-bottom: 1rem;
+}

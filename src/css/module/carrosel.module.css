@@ -1,0 +1,34 @@
+.carrosel {
+  width: 100vw;
+  height: 350px;
+  position: relative;
+  background-color: #312E2E;  /* REMOVE LATER */
+}
+
+.carrosel__banner {
+  width: 100%;
+  height: 100%;
+}
+
+.carrosel__banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.carrosel__controllers {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  display: flex;
+  gap: 25px;
+}
+
+.carrosel__controllers img {
+  cursor: pointer;
+}
+
+@media (min-width: 767px) {
+  .carrosel {
+    width: 85vw;
+  }
+}

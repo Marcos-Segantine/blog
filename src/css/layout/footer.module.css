@@ -1,0 +1,13 @@
+.footer {
+    background-color: black;
+    width: 100%;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+ .networks {
+    display: flex;
+    gap: 15px;
+ }

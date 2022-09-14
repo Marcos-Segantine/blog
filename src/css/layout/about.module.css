@@ -1,0 +1,14 @@
+.about {
+    margin: .5rem 0 4rem 0;
+    width: 85%;
+}
+
+.about__title {
+    margin-bottom: 3rem;
+}
+
+.about__paragrafs {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

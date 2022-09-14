@@ -1,0 +1,13 @@
+.article__info__tag {
+    display: flex;
+    margin-top: 20px;
+    width: max-content;
+}
+
+.article__info__tag span{
+    background-color: var(--purple);
+    padding: .2rem .5rem;
+    color: white;
+    font-size: .7rem;
+    margin-right: 1rem;
+}

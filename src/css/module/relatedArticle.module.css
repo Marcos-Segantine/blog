@@ -1,0 +1,23 @@
+.related_articles{
+    margin-bottom: 7rem;
+    width: 85%;
+}
+
+.related_articles__articles {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(min-width: 767px) {
+    .related_articles {
+        width: 85%;
+    }
+
+    .related_articles__articles {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+

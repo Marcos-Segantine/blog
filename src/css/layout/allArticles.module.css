@@ -1,0 +1,32 @@
+.all_articles {
+  margin-bottom: 10rem;
+}
+
+.all_articles__input {
+  display: flex;
+  margin: 4rem 1rem;
+}
+
+.all_articles__input input {
+  width: 40%;
+}
+
+.all_articles__input button {
+  background-color: var(--color-backgorund-dark-gray);
+  padding: 0 20px;
+}
+
+.all_articles__smal_articles {
+  margin-left: 1rem;
+}
+
+@media (min-width: 767px) {
+  .all_articles__input {
+    margin-left: 0;
+  }
+
+  .all_articles__smal_articles {
+    margin: 0;
+  }
+
+}
