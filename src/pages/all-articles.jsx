@@ -68,10 +68,11 @@ export default function AllArticles({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/getDataToAllArticlesPage");
-  // const res = await fetch(
-  //   "https://www.segantine.dev/api/getDataToAllArticlesPage"
-  // );
+  // const res = await fetch("http://localhost:3000/api/getDataToAllArticlesPage");
+  
+  const res = await fetch(
+    "https://www.segantine.dev/api/getDataToAllArticlesPage"
+  );
   const data = await res.json();
 
   return {

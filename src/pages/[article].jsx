@@ -58,8 +58,8 @@ export default function Article({ data }) {
 export async function getServerSideProps(req) {
   const { article } = req.query;
 
-  const result = await fetch(`http://localhost:3000/api/${article}`);
-  // const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
+  // const result = await fetch(`http://localhost:3000/api/${article}`);
+  const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
   const data = await result.json();
 
   return {
