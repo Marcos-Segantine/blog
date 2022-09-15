@@ -46,7 +46,7 @@ export default function Home({ data }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // const res = await fetch("http://localhost:3000/api/getDataToHome");
   const res = await fetch("https://www.segantine.dev/api/getDataToHome");
   const data = await res.json();
