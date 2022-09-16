@@ -14,7 +14,6 @@ export default function Footer() {
         <Image src={linkedinIcon} width={35} height={35} alt="" />
         <Image src={instagramIcon} width={35} height={35} alt="" />
       </section>
-      <p>Blog do Marcos Segantine@2022</p>
     </div>
   );
 }

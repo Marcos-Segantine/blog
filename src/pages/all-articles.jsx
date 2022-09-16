@@ -1,4 +1,4 @@
-  import Image from "next/image";
+import Image from "next/image";
 import Head from "next/head";
 
 import allArticles from "../css/layout/allArticles.module.css";
@@ -9,13 +9,17 @@ import SmallArticle from "../components/SmallArticle";
 import Categories from "../components/Categories";
 
 import searchIcon from "../images/icons/icon-search.png";
-import rightArrow from "../images/icons/right-arrow.png";
-import leftArrow from "../images/icons/left-arrow.png";
 
-import { useEffect, useState } from "react";
+import React from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function AllArticles({ data }) {
   const [tag, setTag] = useState("");
+
+  let countNumArticle = 0;
+  function setCountArticle() {
+    countNumArticle++;
+  }
 
   return (
     <>
@@ -25,7 +29,7 @@ export default function AllArticles({ data }) {
         </Head>
 
         <Carrosel />
-
+        <a id="back-to-top"></a>
         <div className={allArticles.all_articles__input}>
           <input
             className={input.header__input}
@@ -49,6 +53,7 @@ export default function AllArticles({ data }) {
               data.tags.toLowerCase().includes(tag) ||
               data.title.toLowerCase().includes(tag)
             ) {
+              setCountArticle();
               return (
                 <SmallArticle
                   key={data.id}
@@ -63,13 +68,23 @@ export default function AllArticles({ data }) {
       </div>
 
       <Categories setTag={setTag} />
+      <a
+        className={
+          countNumArticle >= 5
+            ? allArticles.allArticles__btn_backToTop_display
+            : allArticles.allArticles__btn_backToTop_display_none
+        }
+        href="#back-to-top"
+      >
+        BAK TO TOP
+      </a>
     </>
   );
 }
 
 export async function getStaticProps() {
   // const res = await fetch("http://localhost:3000/api/getDataToAllArticlesPage");
-  
+
   const res = await fetch(
     "https://www.segantine.dev/api/getDataToAllArticlesPage"
   );
@@ -81,3 +96,9 @@ export async function getStaticProps() {
     },
   };
 }
+
+// className={
+//   countNumArticle >= 5
+//     ? allArticles.allArticles__btn_backToTop_display
+//     : allArticles.allArticles__btn_backToTop_display_none
+// }
