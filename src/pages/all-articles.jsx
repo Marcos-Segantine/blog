@@ -9,17 +9,29 @@ import SmallArticle from "../components/SmallArticle";
 import Categories from "../components/Categories";
 
 import searchIcon from "../images/icons/icon-search.png";
+import arrowUp from '../images/icons/arrow-up.png'
 
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 
 export default function AllArticles({ data }) {
   const [tag, setTag] = useState("");
+  const [btnBackToTop, setBtnBackToTop] = useState(false);
 
-  let countNumArticle = 0;
-  function setCountArticle() {
-    countNumArticle++;
-  }
+  useEffect(() => {
+    const handleScroll = (event) => {
+      const scroll = window.scrollY;
+
+      if (scroll > 1200) setBtnBackToTop(true);
+      else setBtnBackToTop(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -53,7 +65,6 @@ export default function AllArticles({ data }) {
               data.tags.toLowerCase().includes(tag) ||
               data.title.toLowerCase().includes(tag)
             ) {
-              setCountArticle();
               return (
                 <SmallArticle
                   key={data.id}
@@ -68,15 +79,16 @@ export default function AllArticles({ data }) {
       </div>
 
       <Categories setTag={setTag} />
+
       <a
         className={
-          countNumArticle >= 5
+          btnBackToTop
             ? allArticles.allArticles__btn_backToTop_display
             : allArticles.allArticles__btn_backToTop_display_none
         }
         href="#back-to-top"
       >
-        BAK TO TOP
+        <Image src={arrowUp} width={35} height={30} />
       </a>
     </>
   );
@@ -88,6 +100,7 @@ export async function getStaticProps() {
   const res = await fetch(
     "https://www.segantine.dev/api/getDataToAllArticlesPage"
   );
+
   const data = await res.json();
 
   return {

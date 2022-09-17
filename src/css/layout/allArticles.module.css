@@ -22,8 +22,11 @@
 
 .allArticles__btn_backToTop_display {
   position: fixed;
-  right: 50px;
-  top: 40rem;
+  right: 10px;
+  bottom: 2rem;
+  border-radius: 30px;
+  background-color: var(--purple);
+  padding: 5px;
 }
 
 .allArticles__btn_backToTop_display_none {
@@ -38,5 +41,8 @@
   .all_articles__smal_articles {
     margin: 0;
   }
-
+  .allArticles__btn_backToTop_display {
+    right: 50px;
+    bottom: 5rem;
+  }
 }
