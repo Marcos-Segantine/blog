@@ -27,10 +27,12 @@
   border-radius: 30px;
   background-color: var(--purple);
   padding: 5px;
+  animation: animation_btn_backToTop .5s;
 }
 
 .allArticles__btn_backToTop_display_none {
   display: none;
+
 }
 
 @media (min-width: 767px) {
@@ -41,8 +43,19 @@
   .all_articles__smal_articles {
     margin: 0;
   }
+
   .allArticles__btn_backToTop_display {
     right: 50px;
     bottom: 5rem;
+  }
+}
+
+@keyframes animation_btn_backToTop {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translate(0);
   }
 }
