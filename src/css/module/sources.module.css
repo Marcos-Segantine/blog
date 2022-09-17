@@ -6,7 +6,7 @@
 .sources ul {
     list-style: disc;
     color: var(--gray);
-    margin: 2rem 0 0 3rem;
+    margin: 2rem 0 0 1.8rem;
 }
 
 .sources li {

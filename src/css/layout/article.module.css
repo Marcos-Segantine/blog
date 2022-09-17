@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .article__img {
@@ -11,20 +12,24 @@
     /* REMOVE LATER */
 }
 
-.article__info {
+.article__content {
+    animation: animaion_bottomToTop .4s;
+    padding: 0 1.2rem;
+}
+
+.article__content__info {
     margin: 2rem 0;
-    width: 85%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    animation: animaion_bottomToTop 1s;
 }
 
-.article__info h2 {
+.article__content__info h2 {
     width: 100%;
 }
 
-.article__info__date {
+.article__content__info__date {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -32,14 +37,12 @@
     font-size: .8rem;
 }
 
-.article__content {
-    margin: .5rem 0 4rem 0;
-    width: 85%;
-    animation: animaion_bottomToTop 1s;
+.article__content__body {
+    margin: 4rem 0 4rem 0;
 }
 
 .article__content h3 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* REVISAR ESTA REGRA POSTERIORMENTE E COMPARAR COM A REGRA DA BASE.CSS */
     margin: 5rem 0 2rem;
 }
 
@@ -52,19 +55,18 @@
         width: 85vw;
     }
 
-    .article__content p {
-        width: 80%;
+    .article__content {
+        width: 85%;
     }
 
-    .article__info__tag_data {
-        justify-content: space-between;
-        align-items: center;
+    .article__content p {
+        width: 80%;
     }
 }
 
 @keyframes animaion_bottomToTop {
     from {
-        transform: translateY(100%);
+        transform: translateY(20%);
     }
 
     to {

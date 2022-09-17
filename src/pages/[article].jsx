@@ -24,19 +24,21 @@ export default function Article({ data }) {
 
       <div className={article.article__img}></div>
 
-      <div className={article.article__info}>
-        <h2>{data[0].title}</h2>
+      <div className={article.article__content}>
+        <div className={article.article__content__info}>
+          <h2>{data[0].title}</h2>
 
-        <Tags data={data[0].tags} />
+          <Tags data={data[0].tags} />
 
-        <span className={article.article__info__date}>{date}</span>
+          <span className={article.article__content__info__date}>{date}</span>
+        </div>
+
+        <div className={article.article__content__body}>{body}</div>
+
+        <Verse verse={data[0].verse} address={data[0].address_verse} />
+        <Sources sorces={data[0].sorces} />
+        {/* <RelatedArticle /> */}
       </div>
-
-      <div className={article.article__content}>{body}</div>
-
-      <Verse verse={data[0].verse} address={data[0].address_verse} />
-      <Sources sorces={data[0].sorces} />
-      {/* <RelatedArticle /> */}
     </div>
   );
 }
