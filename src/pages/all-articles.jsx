@@ -95,11 +95,11 @@ export default function AllArticles({ data }) {
 }
 
 export async function getStaticProps() {
-  // const res = await fetch("http://localhost:3000/api/getDataToAllArticlesPage");
+  const res = await fetch("http://localhost:3000/api/getDataToAllArticlesPage");
 
-  const res = await fetch(
-    "https://www.segantine.dev/api/getDataToAllArticlesPage"
-  );
+  // const res = await fetch(
+  //   "https://www.segantine.dev/api/getDataToAllArticlesPage"
+  // );
 
   const data = await res.json();
 
@@ -109,9 +109,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-// className={
-//   countNumArticle >= 5
-//     ? allArticles.allArticles__btn_backToTop_display
-//     : allArticles.allArticles__btn_backToTop_display_none
-// }
