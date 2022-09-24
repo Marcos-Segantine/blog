@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    width: 100%;
 }
 
 .article__img {
@@ -15,6 +16,8 @@
 .article__content {
     animation: animaion_bottomToTop .4s;
     padding: 0 1.2rem;
+    width: 90%;
+
 }
 
 .article__content__info {
@@ -38,7 +41,7 @@
 }
 
 .article__content__body {
-    margin: 4rem 0 4rem 0;
+    margin: 4rem 0 4rem;
 }
 
 .article__content h3 {
@@ -56,7 +59,7 @@
     }
 
     .article__content {
-        width: 85%;
+        width: 85%
     }
 
     .article__content p {

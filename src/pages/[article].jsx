@@ -26,14 +26,20 @@ export default function Article({ data }) {
 
       <div className={article.article__content}>
         <div className={article.article__content__info}>
-          <h2>{data[0].title}</h2>
+          <h2>
+            {/* {data[0].title} */}
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam molestiae cum, nulla, iure possimus eum enim voluptatum eaque voluptates perferendis quia sapiente dignissimos. Odit, consequatur ducimus rem veniam nesciunt quo.
+          </h2>
 
           <Tags data={data[0].tags} />
 
           <span className={article.article__content__info__date}>{date}</span>
         </div>
 
-        <div className={article.article__content__body}>{body}</div>
+        <div className={article.article__content__body}>
+          {/* {body} */}
+          
+        </div>
 
         <Verse verse={data[0].verse} address={data[0].address_verse} />
         <Sources sorces={data[0].sorces} />
@@ -44,6 +50,7 @@ export default function Article({ data }) {
 }
 
 export async function getStaticPaths() {
+  // const res = await fetch("http://localhost:3000/api/getUrl");
   const res = await fetch("https://www.segantine.dev/api/getUrl");
   const data = await res.json();
 
@@ -58,7 +65,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const result = await fetch(`http://localhost:3000/api/${article}`);
+  // const result = await fetch(`http://localhost:3000/api/${params.article}`);
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
   const data = await result.json();
 
