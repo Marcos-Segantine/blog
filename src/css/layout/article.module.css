@@ -45,7 +45,8 @@
 }
 
 .article__content h3 {
-    font-size: 1.8rem; /* REVISAR ESTA REGRA POSTERIORMENTE E COMPARAR COM A REGRA DA BASE.CSS */
+    font-size: 1.8rem;
+    /* REVISAR ESTA REGRA POSTERIORMENTE E COMPARAR COM A REGRA DA BASE.CSS */
     margin: 5rem 0 2rem;
 }
 

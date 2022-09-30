@@ -8,6 +8,8 @@ body {
 :root {
   --color-backgorund: #131219;
   --color-backgorund-dark-gray: #18171e;
+  --background-code: #181a1f;
+  --color-code: #AAB1C0;
   --color-sub-title: #696969;
   --purple: #9156ec;
   --gray: #b4b4b4;
@@ -46,7 +48,7 @@ h3 {
 
 h4 {
   font-size: 1.6rem;
-  margin-bottom: 2rem;
+  margin: 4rem 0 2rem;
 }
 
 h5 {
@@ -61,6 +63,16 @@ ul {
 a {
   color: var(--gray);
   text-decoration: none;
+}
+
+div[class="container-code"] {
+  padding: .7rem 1rem;
+  background-color: var(--background-code);
+}
+
+div[class="container-code"] code {
+  color: var(--color-code);
+  font-size: .8rem;
 }
 
 input {
@@ -93,9 +105,19 @@ button {
   background-color: rgb(19, 19, 19);
 }
 
+@media(min-width: 767px) {
+  div[class="container-code"] code {
+    font-size: 1rem;
+  }
+}
+
 @media(min-width: 1023px) {
   h3 {
     font-size: 1rem;
+  }
+  
+  div[class="container-code"] {
+    max-width: 70%;
   }
 }
 
