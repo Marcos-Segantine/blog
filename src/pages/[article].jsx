@@ -38,8 +38,9 @@ export default function Article({ data }) {
         </div>
 
         <div className={article.article__content__body}>{body}</div>
+        
         <Verse verse={data[0].verse} address={data[0].address_verse} />
-        <Sources sorces={data[0].sorces} />
+        <Sources sorces={data[0].sorces} address={data[0].address_sorces} />
         {/* <RelatedArticle /> */}
       </div>
     </div>
