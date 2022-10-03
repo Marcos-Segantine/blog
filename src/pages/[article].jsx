@@ -13,8 +13,6 @@ import Verse from "../components/Verse";
 import RelatedArticle from "../components/RelatedArticle";
 import Tags from "../components/Tags";
 
-import SyntaxHighlighter from "react-syntax-highlighter";
-
 export default function Article({ data }) {
   const body = htmlReactParser(data[0].body);
 
@@ -25,6 +23,7 @@ export default function Article({ data }) {
       <Head>
         <title>{data[0].title}</title>
       </Head>
+    
 
       <div className={article.article__img}></div>
 

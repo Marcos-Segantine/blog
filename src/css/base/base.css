@@ -106,6 +106,10 @@ button {
   background-color: rgb(19, 19, 19);
 }
 
+iframe {
+  width: 100%;
+}
+
 @media(min-width: 767px) {
   div[class="container-code"] code {
     font-size: 1rem;
@@ -119,6 +123,9 @@ button {
   
   div[class="container-code"] {
     max-width: 70%;
+  }
+  iframe {
+    max-width: 72.5%;
   }
 }
 

@@ -54,6 +54,7 @@
     width: 100%;
 }
 
+
 @media(min-width: 767px) {
     .article__img {
         width: 85vw;
