@@ -15,7 +15,6 @@ import Tags from "../components/Tags";
 
 export default function Article({ data }) {
   const body = htmlReactParser(data[0].body);
-  console.log(data);
 
   const date = data[0].createdAt.split("/").reverse().join("/");
 
