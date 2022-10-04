@@ -15,6 +15,10 @@
     color: white;
 }
 
+.verse a {
+    text-decoration: underline;
+}
+
 @media(min-width: 767px) {
     .verse p {
         max-width: 50%;
