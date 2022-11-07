@@ -1,0 +1,33 @@
+.introHome {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+    gap: 50px;
+}
+
+.introHome h1 {
+    color: var(--gray);
+    font-size: 4rem;
+    text-align: center;
+}
+
+.introHome p {
+    color: var(--gray);
+    font-size: .9rem;
+    width: 95%;
+    text-align: center;
+}
+
+@media(min-width: 767px) {
+    .introHome h1 {
+        font-size: 5rem;
+    }
+
+    .introHome p {
+        font-size: 1.1rem;
+        width: 80%;
+    }
+}

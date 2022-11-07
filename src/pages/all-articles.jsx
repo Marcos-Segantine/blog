@@ -4,7 +4,6 @@ import Head from "next/head";
 import allArticles from "../css/layout/allArticles.module.css";
 import input from "../css/module/input.module.css";
 
-import Carrosel from "../components/Carrosel";
 import SmallArticle from "../components/SmallArticle";
 import Categories from "../components/Categories";
 
@@ -40,7 +39,6 @@ export default function AllArticles({ data }) {
           <title>Todos os Artigos</title>
         </Head>
 
-        <Carrosel />
         <a id="back-to-top"></a>
         <div className={allArticles.all_articles__input}>
           <input

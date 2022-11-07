@@ -1,8 +1,9 @@
 import Head from "next/head";
 
-import Carrosel from "../components/Carrosel";
 import homeMain from "../css/module/homeMain.module.css";
 import Article from "../components/ArticleHome";
+import { IntroHome } from "../components/IntroHome";
+
 import Link from "next/link";
 
 export default function Home({ data }) {
@@ -14,7 +15,8 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Carrosel />
+      <IntroHome />
+
       <main className={homeMain.home__main}>
         <div className={homeMain.home__main__articles}>
           {data.map((data, index) => {
