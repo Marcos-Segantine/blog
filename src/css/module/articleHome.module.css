@@ -1,20 +1,17 @@
-.bigger_article,
 .average_article {
-  width: 95%;
   transition: all .2s;
-  margin: 3rem 0;
   transition: all .5s;
+  background-color: #2020205d;
+  padding: 0 2rem 2rem;
 }
 
-.bigger_article:hover,
 .average_article:hover {
-  transform: translateY(-1%);
+  transform: translateX(3%);
 }
 
-.bigger_article h5,
 .average_article h5 {
-  margin: 1.2rem 0 2rem;
   height: max-content;
+  margin-bottom: 1.5rem;
 }
 
 .article__date_author {
@@ -25,22 +22,7 @@
 }
 
 @media (min-width: 767px) {
-  .bigger_article {
-    width: 47%;
-  }
-
   .average_article {
-    width: 47%;
-  }
-
-  .bigger_article h5,
-  .average_article h5 {
-    height: 80px;
-  }
-}
-
-@media (min-width: 1023px) {
-  .average_article {
-    width: 30%;
+    width: 35%;
   }
 }

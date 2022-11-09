@@ -18,20 +18,13 @@ export default function Home({ data }) {
       <IntroHome />
 
       <main className={homeMain.home__main}>
+        <div className={homeMain.lineTop}></div>
+        <div className={homeMain.home__main__filter}>
+          <p className={homeMain.selected}>Mais Recentes</p>
+          <p>Mais Vistos</p>
+        </div>
         <div className={homeMain.home__main__articles}>
-          {data.map((data, index) => {
-            if (index === 0 || index === 1)
-              return (
-                <Article
-                  key={data.id}
-                  linkUrl={data.articles_url}
-                  title={data.title}
-                  tags={data.tags}
-                  createdAt={data.createdAt}
-                  isBigger={true}
-                />
-              );
-
+          {data.map((data) => {
             return (
               <Article
                 key={data.id}
