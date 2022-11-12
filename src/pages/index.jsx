@@ -1,8 +1,10 @@
 import Head from "next/head";
 
 import homeMain from "../css/module/homeMain.module.css";
+
 import Article from "../components/ArticleHome";
 import { IntroHome } from "../components/IntroHome";
+import {Languages} from '../components/Languages'
 
 import Link from "next/link";
 
@@ -36,6 +38,7 @@ export default function Home({ data }) {
             );
           })}
         </div>
+        <Languages />
       </main>
     </>
   );
