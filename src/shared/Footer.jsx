@@ -20,20 +20,14 @@ export default function Footer() {
 
       <section className={footer.networks}>
         <Link href="https://github.com/Marcos-Segantine">
-          <a>
             <Image src={githubIcon} width={45} height={45} alt="" />
-          </a>
         </Link>
 
         <Link href="https://www.linkedin.com/in/marcossegantine/">
-          <a>
             <Image src={linkedinIcon} width={45} height={45} alt="" />
-          </a>
         </Link>
         <Link href="">
-          <a>
             <Image src={instagramIcon} width={45} height={45} alt="" />
-          </a>
         </Link>
       </section>
     </div>
