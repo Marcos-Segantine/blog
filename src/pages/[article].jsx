@@ -4,15 +4,15 @@ import article from "../css/layout/article.module.css";
 
 import React from "react";
 
-import htmlReactParser, { DOMNode } from "html-react-parser";
+import htmlReactParser from "html-react-parser";
 
 import Sources from "../components/Sources";
 import Verse from "../components/Verse";
-import RelatedArticle from "../components/RelatedArticle";
 import Tags from "../components/Tags";
 
 export default function Article({ data }) {
   const body = htmlReactParser(data[0].body);
+  const verse = htmlReactParser(data[0].verse);
 
   const date = data[0].createdAt.split("/").reverse().join("/");
 
@@ -33,12 +33,9 @@ export default function Article({ data }) {
           <span className={article.article__content__info__date}>{date}</span>
         </div>
 
-        <div className={article.article__content__body}>
-          {body}
-        </div>
-
+        <div className={article.article__content__body}>{body}</div>
         <Verse
-          verse={data[0].verse}
+          verse={verse}
           address={data[0].address_verse}
           link={data[0].verse_link}
         />
