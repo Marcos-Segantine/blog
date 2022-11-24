@@ -94,6 +94,11 @@ button {
   cursor: pointer;
 }
 
+.keyword {
+  background-color: #1c1e23;
+  padding: .2rem .3rem;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
