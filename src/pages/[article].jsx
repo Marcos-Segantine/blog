@@ -40,7 +40,6 @@ export default function Article({ data }) {
           link={data[0].verse_link}
         />
         <Sources sorces={data[0].sorces} address={data[0].address_sorces} />
-        {/* <RelatedArticle /> */}
       </div>
     </div>
   );
