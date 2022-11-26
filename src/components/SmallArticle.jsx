@@ -9,14 +9,12 @@ export default function SmallArticle(props) {
         <div></div>
       </div>
       <Link href={`/${props.link}`}>
-        <a>
           <div className={smallArticle.small_article__contet}>
             <h3>{props.title}</h3>
             <div>
               <p>{props.subTitle}</p>
             </div>
           </div>
-        </a>
       </Link>
     </div>
   );

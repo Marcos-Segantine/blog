@@ -10,12 +10,15 @@ import Categories from "../components/Categories";
 import searchIcon from "../images/icons/icon-search.png";
 import arrowUp from '../images/icons/arrow-up.png'
 
-import React from "react";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import bannerFront from '.././assets/banner-all-articles/bannerFront.svg'
+import bannerBack from '.././assets/banner-all-articles/bannerBack.svg'
 
 export default function AllArticles({ data }) {
   const [tag, setTag] = useState("");
   const [btnBackToTop, setBtnBackToTop] = useState(false);
+  const [changeBanner, setChangeBanner] = useState(true)
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -26,11 +29,11 @@ export default function AllArticles({ data }) {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
+
+  setInterval(() => {
+    setChangeBanner(!changeBanner)
+  }, 6000)
 
   return (
     <>
@@ -38,6 +41,11 @@ export default function AllArticles({ data }) {
         <Head>
           <title>Todos os Artigos</title>
         </Head>
+
+          <BannerAllArticles className={changeBanner ? allArticles.banner_display_none : allArticles.all_articles__banner} banner={bannerBack} title="Back-End" text="text example" /> 
+
+          <BannerAllArticles className={changeBanner ? allArticles.all_articles__banner : allArticles.banner_display_none} banner={bannerFront} title="Fron-End" text="text example" />
+        
 
         <a id="back-to-top"></a>
         <div className={allArticles.all_articles__input}>
@@ -90,6 +98,19 @@ export default function AllArticles({ data }) {
       </a>
     </>
   );
+}
+
+const BannerAllArticles = ({banner, title, text, className}) => {
+
+  return(
+    <div className={`${className}`}>
+      <div className={allArticles.all_articles__banner__text}>
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </div>
+      <Image className={allArticles.all_articles__banner__img} src={banner} priority={true} />
+    </div>
+  )
 }
 
 export async function getStaticProps() {
