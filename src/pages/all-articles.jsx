@@ -4,7 +4,7 @@ import Head from "next/head";
 import allArticles from "../css/layout/allArticles.module.css";
 import input from "../css/module/input.module.css";
 
-import SmallArticle from "../components/SmallArticle";
+import Article from '../components/ArticleHome'
 import Categories from "../components/Categories";
 
 import searchIcon from "../images/icons/icon-search.png";
@@ -12,13 +12,11 @@ import arrowUp from '../images/icons/arrow-up.png'
 
 import React, { useEffect, useState } from "react";
 
-import bannerFront from '.././assets/banner-all-articles/bannerFront.svg'
-import bannerBack from '.././assets/banner-all-articles/bannerBack.svg'
+import programmerGif from '.././assets/Programmer.gif'
 
 export default function AllArticles({ data }) {
   const [tag, setTag] = useState("");
   const [btnBackToTop, setBtnBackToTop] = useState(false);
-  const [changeBanner, setChangeBanner] = useState(true)
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -31,9 +29,6 @@ export default function AllArticles({ data }) {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  setInterval(() => {
-    setChangeBanner(!changeBanner)
-  }, 6000)
 
   return (
     <>
@@ -42,10 +37,9 @@ export default function AllArticles({ data }) {
           <title>Todos os Artigos</title>
         </Head>
 
-          <BannerAllArticles className={changeBanner ? allArticles.banner_display_none : allArticles.all_articles__banner} banner={bannerBack} title="Back-End" text="text example" /> 
-
-          <BannerAllArticles className={changeBanner ? allArticles.all_articles__banner : allArticles.banner_display_none} banner={bannerFront} title="Fron-End" text="text example" />
-        
+        <div className={allArticles.gif}>
+          <Image src={programmerGif}  />
+        </div>
 
         <a id="back-to-top"></a>
         <div className={allArticles.all_articles__input}>
@@ -65,21 +59,17 @@ export default function AllArticles({ data }) {
           </button>
         </div>
 
-        <div className={allArticles.all_articles__smal_articles}>
+        <div className={allArticles.articles}>
           {data.map((data) => {
-            if (
-              data.tags.toLowerCase().includes(tag) ||
-              data.title.toLowerCase().includes(tag)
-            ) {
-              return (
-                <SmallArticle
-                  key={data.id}
-                  title={data.title}
-                  subTitle={data.sub_title}
-                  link={data.articles_url}
-                />
-              );
-            }
+            return (
+              <Article
+                key={data.id}
+                linkUrl={data.articles_url}
+                title={data.title}
+                tags={data.tags}
+                createdAt={data.createdAt}
+              />
+            );
           })}
         </div>
       </div>
@@ -100,18 +90,6 @@ export default function AllArticles({ data }) {
   );
 }
 
-const BannerAllArticles = ({banner, title, text, className}) => {
-
-  return(
-    <div className={`${className}`}>
-      <div className={allArticles.all_articles__banner__text}>
-        <h2>{title}</h2>
-        <p>{text}</p>
-      </div>
-      <Image className={allArticles.all_articles__banner__img} src={banner} priority={true} />
-    </div>
-  )
-}
 
 export async function getStaticProps() {
   // const res = await fetch("http://localhost:3000/api/getDataToAllArticlesPage");
