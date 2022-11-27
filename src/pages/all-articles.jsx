@@ -38,7 +38,7 @@ export default function AllArticles({ data }) {
         </Head>
 
         <div className={allArticles.gif}>
-          <Image src={programmerGif}  />
+          <Image src={programmerGif} priority loading="eager" />
         </div>
 
         <a id="back-to-top"></a>
