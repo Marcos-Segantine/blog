@@ -2,18 +2,14 @@ import averageArticle from "../css/module/articleHome.module.css";
 
 import Link from "next/link";
 
-export default function ArticleHome(props) {
-  const date = props.createdAt.split("/").reverse().join("/");
-
-  const tagsArray = props.tags.split(",");
-
+export default function ArticleHome({ linkUrl, title }) {
   return (
     <div className={averageArticle.average_article}>
-      <Link href={props.linkUrl}>
-        <h5>{props.title}</h5>
+      <Link href={linkUrl}>
+        <h5>{title}</h5>
       </Link>
 
-      <Link href={props.linkUrl}>
+      <Link href={linkUrl}>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fugit
           voluptatem saepe pariatur facilis assumenda reiciendis commodi sit

@@ -13,8 +13,6 @@ export default function Categories({ setTag }) {
       if(scroll > 700) setShowCategories(true)
       else setShowCategories(false)
 
-      console.log(scroll);
-
     }
 
     window.addEventListener("scroll", handleScroll);
