@@ -5,8 +5,7 @@ import homeMain from "../css/module/homeMain.module.css";
 import Article from "../components/ArticleHome";
 import { IntroHome } from "../components/IntroHome";
 import { Portfolio } from "../components/Portfolio";
-
-import Link from "next/link";
+import { ArticlesLanguages } from "../components/ArticlesLanguages";
 
 export default function Home({ data }) {
   return (
@@ -38,6 +37,8 @@ export default function Home({ data }) {
             );
           })}
         </div>
+        <ArticlesLanguages data={data} />
+
         <Portfolio />
       </main>
     </>
