@@ -1,6 +1,8 @@
+import Link from 'next/link'
+
 import articlesLanguages from '../css/module/articlesLanguages.module.css'
 
-import Link from 'next/link'
+import Tags from './Tags'
 
 export const ArticlesLanguages = ({ data }) => {
     
@@ -15,7 +17,7 @@ export const ArticlesLanguages = ({ data }) => {
                     dataJavaScript.map(data => {
                         return(
                             <Link key={data.id} href={data.articles_url} className={articlesLanguages.articles_languages__content__article}>
-                                    <span className={articlesLanguages.articles_languages__content__article__tags}>{data.tags}</span>
+                                    <Tags data={data.tags} />
                                     <h3>{data.title}</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi autem sit itaque rem tempore quidem, hic exercitationem numquam minima quia quod iure voluptate laborum, molestias sed dignissimos illum necessitatibus?</p>
                                     <span className={articlesLanguages.articles_languages__content__article__date}>{data.createdAt}</span>
@@ -31,7 +33,7 @@ export const ArticlesLanguages = ({ data }) => {
                     dataReact.map(data => {
                         return(
                             <Link key={data.id} href={data.articles_url} className={articlesLanguages.articles_languages__content__article}>
-                                <span className={articlesLanguages.articles_languages__content__article__tags}>{data.tags}</span>
+                                <Tags data={data.tags} />
                                 <h3>{data.title}</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi autem sit itaque rem tempore quidem, hic exercitationem numquam minima quia quod iure voluptate laborum, molestias sed dignissimos illum necessitatibus?</p>
                                 <span className={articlesLanguages.articles_languages__content__article__date}>{data.createdAt}</span>

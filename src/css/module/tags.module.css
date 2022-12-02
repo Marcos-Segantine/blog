@@ -14,7 +14,7 @@
 
 @media(min-width: 767px) {
     .article__info__tag span {
-        font-size: .9rem;
-        padding: .4rem .7rem;
+        font-size: .7rem;
+        padding: .3rem;
     }
 }

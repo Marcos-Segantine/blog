@@ -37,14 +37,6 @@
     background-color: var(--color-backgorund-dark-gray);
 }
 
-.articles_languages__content__article__tags {
-    color: white;
-    background-color: var(--purple);
-    padding: .3rem;
-    font-size: .7rem;
-    width: max-content;
-}
-
 .articles_languages__content__article h3 {
     font-size: 1.2rem;
     margin: 1rem 0;
