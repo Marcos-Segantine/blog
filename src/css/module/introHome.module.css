@@ -47,6 +47,7 @@
 @media(min-width: 1023px) {
     .introHome p {
         width: 70%;
+        right: 0;
     }
 }
 
