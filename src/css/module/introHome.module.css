@@ -6,16 +6,22 @@
     justify-content: flex-end;
     padding-bottom: 1rem;
     gap: 50px;
+    position: relative;
 }
 
 .introHome h1 {
-    color: var(--gray);
     font-size: 4rem;
     text-align: center;
 }
 
+.intro_home__programmer {
+    position: absolute;
+    left: -300px;
+    bottom: -95px;
+    display: none;
+}
+
 .introHome p {
-    color: var(--gray);
     font-size: .9rem;
     width: 95%;
     text-align: center;
@@ -28,6 +34,12 @@
 
     .introHome p {
         font-size: 1.1rem;
-        width: 80%;
+        width: 60%;
+        position: relative;
+        right: -50px;
+    }
+
+    .intro_home__programmer {
+        display: block;
     }
 }

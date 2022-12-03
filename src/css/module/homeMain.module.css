@@ -12,7 +12,8 @@
 .lineTop {
   margin-bottom: 1.5rem;
   border-top: 1px white solid;
-  width: 85%;
+  width: 100%;
+  max-width: 1400px;
   text-align: center;
 }
 
