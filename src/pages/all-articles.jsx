@@ -91,7 +91,7 @@ export default function AllArticles({ data }) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // const res = await fetch("http://localhost:3000/api/getDataToAllArticlesPage");
 
   const res = await fetch(
