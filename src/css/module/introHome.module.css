@@ -16,7 +16,7 @@
 
 .intro_home__programmer {
     position: absolute;
-    left: -300px;
+    left: -310px;
     bottom: -95px;
     display: none;
 }
@@ -34,12 +34,24 @@
 
     .introHome p {
         font-size: 1.1rem;
-        width: 60%;
+        width: 55%;
         position: relative;
-        right: -50px;
+        right: -20px;
     }
 
     .intro_home__programmer {
         display: block;
+    }
+}
+
+@media(min-width: 1023px) {
+    .introHome p {
+        width: 70%;
+    }
+}
+
+@media(min-width: 1200px) {
+    .intro_home__programmer {
+        left: -400px;
     }
 }
