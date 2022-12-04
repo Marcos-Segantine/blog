@@ -16,6 +16,8 @@ import programmerGif from '.././assets/Programmer.gif'
 
 export default function AllArticles({ data }) {
   const [tag, setTag] = useState("");
+  const [searchArticle, setSearchArticle] = useState("")
+
   const [btnBackToTop, setBtnBackToTop] = useState(false);
 
   useEffect(() => {
@@ -29,6 +31,9 @@ export default function AllArticles({ data }) {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  const handleInput = (e) => {
+    setSearchArticle(e.target.value)
+  }
 
   return (
     <>
@@ -47,9 +52,7 @@ export default function AllArticles({ data }) {
             className={input.header__input}
             type="text"
             placeholder="Procurar por artigo"
-            onChange={(e) => {
-              setTag(e.target.value.toLowerCase());
-            }}
+            onChange={handleInput}
           />
           <button>
             <Image
@@ -61,15 +64,18 @@ export default function AllArticles({ data }) {
 
         <div className={allArticles.articles}>
           {data.map((data) => {
-            return (
-              <Article
-                key={data.id}
-                linkUrl={data.articles_url}
-                title={data.title}
-                tags={data.tags}
-                createdAt={data.createdAt}
-              />
-            );
+            if (data.title.toLowerCase().includes(searchArticle.toLowerCase().trim()) || data.tags.toLowerCase().includes(searchArticle.toLowerCase().trim()) || tag === data.tags) {
+              return (
+                <Article
+                  key={data.id}
+                  linkUrl={data.articles_url}
+                  title={data.title}
+                  tags={data.tags}
+                  createdAt={data.createdAt}
+                />
+                );
+              }
+              else return 
           })}
         </div>
       </div>
