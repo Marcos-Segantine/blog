@@ -78,16 +78,15 @@ export async function getServerSideProps({ params }) {
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
   const data = await result.json();
 
-  const resData = await axios({
-    method: 'post',
-    url: "https://www.segantine.dev/api/addVisitArticle",
-    data: {
-      article_url: params.article
-    },
-  })
-  
-  console.log(resData);
+  await fetch("https://www.segantine.dev/api/addVisitArticle", {
+    method: "PATCH",
+    body: JSON.stringify({
+      article_url: 'hoisting-no-javascript-var-let-e-const',
+    }),
 
+  }).then(res => console.log(res.status))
+
+  
   return {
     props: {
       data: data[0]
