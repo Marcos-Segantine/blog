@@ -28,6 +28,7 @@
 .home__main__filter p {
   font-weight: bold;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .home__main__filter .selected {

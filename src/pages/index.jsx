@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import { useState } from "react";
+
 import homeMain from "../css/module/homeMain.module.css";
 
 import Article from "../components/ArticleHome";
@@ -8,6 +10,13 @@ import { Portfolio } from "../components/Portfolio";
 import { ArticlesLanguages } from "../components/ArticlesLanguages";
 
 export default function Home({ data }) {
+  const [mostSeen, setMostSeen] = useState(false)
+  
+  const handleClick = () => {
+    setMostSeen(!mostSeen)
+  }
+
+
   return (
     <>
       <Head>
@@ -21,18 +30,20 @@ export default function Home({ data }) {
       <main className={homeMain.home__main}>
         <div className={homeMain.lineTop}></div>
         <div className={homeMain.home__main__filter}>
-          <p className={homeMain.selected}>Mais Recentes</p>
-          <p>Mais Vistos</p>
+          <p className={mostSeen ? homeMain.selected : ""}  onClick={handleClick}>Mais Recentes</p>
+          <p className={!mostSeen ? homeMain.selected : ""} onClick={handleClick}>Mais Vistos</p>
         </div>
         <div className={homeMain.home__main__articles}>
+
+
+
           {data.map((data) => {
             return (
               <Article
                 key={data.id}
+                id={data.id}
                 linkUrl={data.articles_url}
                 title={data.title}
-                tags={data.tags}
-                createdAt={data.createdAt}
               />
             );
           })}
