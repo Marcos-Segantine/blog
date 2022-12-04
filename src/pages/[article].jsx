@@ -22,8 +22,6 @@ export default function Article({ data }) {
         <title>{data.title}</title>
       </Head>
 
-      <div className={article.article__img}></div>
-
       <div className={article.article__content}>
         <div className={article.article__content__info}>
           <h2>{data.title}</h2>

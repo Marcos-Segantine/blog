@@ -6,13 +6,6 @@
     width: 100%;
 }
 
-.article__img {
-    width: 100vw;
-    height: 350px;
-    background-color: #312E2E;
-    /* REMOVE LATER */
-}
-
 .article__content {
     animation: animaion_bottomToTop .4s;
     padding: 0 1.2rem;
@@ -46,7 +39,6 @@
 
 .article__content h3 {
     font-size: 1.8rem;
-    /* REVISAR ESTA REGRA POSTERIORMENTE E COMPARAR COM A REGRA DA BASE.CSS */
     margin: 5rem 0 2rem;
 }
 
