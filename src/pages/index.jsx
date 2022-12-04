@@ -16,7 +16,6 @@ export default function Home({ data }) {
     setMostSeen(!mostSeen)
   }
 
-
   return (
     <>
       <Head>
