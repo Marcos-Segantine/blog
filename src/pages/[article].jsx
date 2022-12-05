@@ -16,6 +16,7 @@ export default function Article({ data }) {
 
   const date = data.createdAt.split("/").reverse().join("/");
 
+
   return (
     <div className={article.article}>
       <Head>
@@ -62,7 +63,10 @@ export async function getStaticProps({ params }) {
   // const result = await fetch(`http://localhost:3000/api/${params.article}`);
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
   const data = await result.json();
-  
+
+  await fetch("https://www.segantine.dev/api/addVisitArticle")
+    
+
   return {
     props: {
       data: data[0]
