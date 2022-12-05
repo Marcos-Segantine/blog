@@ -72,7 +72,7 @@ export async function getStaticProps({ params }) {
       visits: data[0].visits,
       article: data[0].articles_url
     }
-  }).then(res => console.log(result))
+  })
 
   return {
     props: {
