@@ -4,9 +4,9 @@ export default async function addVisitArticle(req, res) {
   const { article_url } = req.query
 
   db.query(
-    `UPDATE articles SET visits=20 WHERE articles_url="hoisting-no-javascript-var-let-e-const";`,
+    `SELECT visits FROM articles WHERE articles_url=${article_url}`,
     (err, result) => {
-      result.status(200);
+      db.query(`UPDATE articles SET visits=${JSON.parse(result) + 1} WEHRE articles_url =${article_url}`)
     }
   );
 }

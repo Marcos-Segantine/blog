@@ -81,11 +81,9 @@ export async function getServerSideProps({ params }) {
   await fetch("https://www.segantine.dev/api/addVisitArticle", {
     method: "PATCH",
     body: JSON.stringify({
-      article_url: 'hoisting-no-javascript-var-let-e-const',
+      article_url: params.article,
     }),
-
-  }).then(res => console.log(res.status))
-
+  }).then(res => console.log(res))
   
   return {
     props: {
