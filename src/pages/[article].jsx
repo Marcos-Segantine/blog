@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import Head from "next/head";
 
 import article from "../css/layout/article.module.css";
@@ -45,45 +43,25 @@ export default function Article({ data }) {
   );
 }
 
-// export async function getStaticPaths() {
-//   // const res = await fetch("http://localhost:3000/api/getUrl");
-//   const res = await fetch("https://www.segantine.dev/api/getUrl");
-//   const data = await res.json();
+export async function getStaticPaths() {
+  // const res = await fetch("http://localhost:3000/api/getUrl");
+  const res = await fetch("https://www.segantine.dev/api/getUrl");
+  const data = await res.json();
 
-//   const paths = data.map((url) => ({
-//     params: { article: url.articles_url },
-//   }));
+  const paths = data.map((url) => ({
+    params: { article: url.articles_url },
+  }));
 
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
-// export async function getStaticProps({ params }) {
-//   // const result = await fetch(`http://localhost:3000/api/${params.article}`);
-//   const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
-//   const data = await result.json();
-  
-//   return {
-//     props: {
-//       data: data[0]
-//     },
-//   };
-// }
-
-
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   // const result = await fetch(`http://localhost:3000/api/${params.article}`);
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
   const data = await result.json();
-
-  await fetch("https://www.segantine.dev/api/addVisitArticle", {
-    method: "PATCH",
-    body: JSON.stringify({
-      article_url: params.article,
-    }),
-  }).then(res => console.log(res))
   
   return {
     props: {
