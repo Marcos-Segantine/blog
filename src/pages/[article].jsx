@@ -50,7 +50,7 @@ export async function getStaticPaths() {
   const data = await res.json();
 
   const paths = data.map((url) => ({
-    params: { article: url.articles_url },
+    params: { article: url.articles_url, visits: url.visits },
   }));
 
   return {
@@ -64,8 +64,10 @@ export async function getStaticProps({ params }) {
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`);
   const data = await result.json();
 
-  await fetch("https://www.segantine.dev/api/addVisitArticle")
-    
+  await fetch("https://www.segantine.dev/api/addVisitArticle",{
+    method: "patch",
+    body: params.visits
+  }).then(res => console.log(result))
 
   return {
     props: {
