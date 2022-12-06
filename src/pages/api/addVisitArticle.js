@@ -4,6 +4,8 @@ export default async function addVisitArticle(req, res) {
   const { article } = req.query
   let { atualVisits } = req.query
 
+  console.log("HELLO");
+
     db.query(
     "UPDATE articles SET visits=20 where id=2;",
     (err, result) => {
