@@ -53,7 +53,7 @@ export async function getServerSideProps({ params }) {
   await fetch("https://www.segantine.dev/api/addVisitArticle", {
     method: 'patch',
     body: {
-      article: data[0].articles_url,
+      article: params.article,
       atualVisits: data[0].visits
     }
   })
