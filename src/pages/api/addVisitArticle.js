@@ -5,7 +5,7 @@ export default async function addVisitArticle(req, res) {
   let { atualVisits } = req.query
 
     db.query(
-    "UPDATE articles SET visits=? where articles_url=?;", [20, article],
+    "UPDATE articles SET visits=20 where id=2;",
     (err, result) => {
       res.status(200).json(result);
     }
