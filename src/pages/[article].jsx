@@ -46,29 +46,19 @@ export default function Article({ data }) {
   );
 }
 
-export async function getStaticPaths() {
-  // const res = await fetch("http://localhost:3000/api/getUrl");
-  const res = await fetch("https://www.segantine.dev/api/getUrl");
-  const data = await res.json();
-
-  const paths = data.map((url) => ({
-    params: { article: url.articles_url, visits: url.visits },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  // const result = await fetch(`http://localhost:3000/api/${params.article}`);
+export async function getServerSideProps({ params }) {
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`)
   const data = await result.json();
 
-  // console.log(data[0].visits);
+  await fetch("https://www.segantine.dev/api/addVisitArticle", {
+    method: 'patch',
+    body: {
+      article: data[0].articles_url,
+      atualVisits: data[0].visits
+    }
+  })
 
-  await fetch("https://www.segantine.dev/api/addVisitArticle")
+  // console.log(data[0].articles_url, data[0].visits);
     
   return {
     props: {
