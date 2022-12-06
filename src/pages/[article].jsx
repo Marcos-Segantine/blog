@@ -68,23 +68,8 @@ export async function getStaticProps({ params }) {
 
   // console.log(data[0].visits);
 
-  // await fetch("https://www.segantine.dev/api/addVisitArticle",{
-  //   method: "patch",
-  //   body: {
-  //     visits: data[0].visits,
-  //     article: data[0].articles_url
-  //   }
-  // })
-
-  axios.patch("https://www.segantine.dev/api/addVisitArticle", {
-    data: {
-      visits: data[0].visits,
-      article: data[0].articles_url
-    }
-  }).then((res) => {
-    console.log(res);
-  })
-
+  await fetch("https://www.segantine.dev/api/addVisitArticle")
+    
   return {
     props: {
       data: data[0]
