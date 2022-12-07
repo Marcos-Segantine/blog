@@ -10,8 +10,6 @@ import Sources from "../components/Sources";
 import Verse from "../components/Verse";
 import Tags from "../components/Tags";
 
-import axios from "axios";
-
 export default function Article({ data }) {
   const body = htmlReactParser(data.body);
   const verse = htmlReactParser(data.verse);
@@ -48,7 +46,6 @@ export default function Article({ data }) {
 
 export async function getServerSideProps({ params }) {
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`)
-  
   const data = await result.json();
 
   await fetch("https://www.segantine.dev/api/addVisitArticle", {
