@@ -12,10 +12,6 @@ import { ArticlesLanguages } from "../components/ArticlesLanguages";
 export default function Home({ data }) {
   const [mostSeen, setMostSeen] = useState(false)
   
-  const handleClick = () => {
-    setMostSeen(!mostSeen)
-  }
-
   return (
     <>
       <Head>
@@ -29,8 +25,6 @@ export default function Home({ data }) {
       <main className={homeMain.home__main}>
         <div className={homeMain.lineTop}></div>
         <div className={homeMain.home__main__filter}>
-          <p className={mostSeen ? homeMain.selected : ""}  onClick={handleClick}>Mais Recentes</p>
-          <p className={!mostSeen ? homeMain.selected : ""} onClick={handleClick}>Mais Vistos</p>
         </div>
         <div className={homeMain.home__main__articles}>
 
