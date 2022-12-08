@@ -8,7 +8,7 @@ import Article from '../components/ArticleHome'
 import Categories from "../components/Categories";
 
 import searchIcon from "../images/icons/icon-search.png";
-import arrowUp from '../images/icons/arrow-up.png'
+import arrowUp from '../images/icons/arrow-up.png';
 
 import React, { useEffect, useState } from "react";
 

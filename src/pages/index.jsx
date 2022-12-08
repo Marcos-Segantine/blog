@@ -34,8 +34,6 @@ export default function Home({ data }) {
         </div>
         <div className={homeMain.home__main__articles}>
 
-
-
           {data.map((data) => {
             return (
               <Article
@@ -47,8 +45,8 @@ export default function Home({ data }) {
             );
           })}
         </div>
+        
         <ArticlesLanguages data={data} />
-
         <Portfolio />
       </main>
     </>
