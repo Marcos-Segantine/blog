@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   let visits = 1
 
   db.query("SELECT visits FROM articles WHERE articles_url=?", [article], (err, result) => {
-    visits += result
+    visits += Number(JSON.parse(result))
   })
 
   db.query("UPDATE articles SET visits=? WHERE articles_url=?", [visits, article]) 
