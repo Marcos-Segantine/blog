@@ -4,10 +4,8 @@ export default async function handler(req, res) {
   const { article } = req.query
 
   db.query("SELECT visits FROM articles WHERE articles_url=?", [article], (err, result) => {
-    const atualVisits = Number(result)
-    const visits = atualVisits + 1
 
-    db.query("UPDATE articles SET visits=? WHERE articles_url=?", [visits, article]) 
+    db.query("UPDATE articles SET visits=100 WHERE articles_url=?", [article]) 
   })
 
   db.query("SELECT * FROM articles WHERE articles_url=?", [article], (err, result) => {
