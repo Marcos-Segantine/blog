@@ -54,13 +54,10 @@ export async function getServerSideProps({ params }) {
 }
 
   fetch('https://www.segantine.dev/api/addVisits', {
-  method: 'PUT',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(addVisits)
-})
-
+    method: 'PUT',
+    body: addVisits
+    })
+    
   return {
     props: {
       data: data[0]

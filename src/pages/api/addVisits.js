@@ -1,8 +1,8 @@
 import db from "./database/db";
 
 export default async function getDataToHome(req, res) {
-    const visits = JSON.parse(req.query.visits)
-    const article = JSON.parse(req.query.article)
+    const visits = JSON.parse(req.query.addVisits.visits)
+    const article = JSON.parse(req.query.addVisits.article)
 
     db.query(
     `UPDATE articles SET visits=? WHERE articles_url=?`, [visits, article],
