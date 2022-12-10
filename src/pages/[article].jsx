@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import article from "../css/layout/article.module.css";
 
@@ -15,7 +16,6 @@ export default function Article({ data }) {
   const verse = htmlReactParser(data.verse);
 
   const date = data.createdAt.split("/").reverse().join("/");
-
 
   return (
     <div className={article.article}>
@@ -47,6 +47,19 @@ export default function Article({ data }) {
 export async function getServerSideProps({ params }) {
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`)
   const data = await result.json();
+  
+  // console.log(++data[0].visits);
+
+  fetch('https://example.com/profile', {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  // body: {visits: JSON.stringify(data)},
+  body: {visits: ++data[0].visits, article: params.article}
+})
+
+
 
   return {
     props: {

@@ -71,8 +71,6 @@ export default function AllArticles({ data }) {
                   linkUrl={data.articles_url}
                   title={data.title}
                   tags={data.tags}
-                  createdAt={data.createdAt}
-                  visits={data.visits}
                 />
                 );
               }

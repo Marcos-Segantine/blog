@@ -10,9 +10,6 @@ import { Portfolio } from "../components/Portfolio";
 import { ArticlesLanguages } from "../components/ArticlesLanguages";
 
 export default function Home({ data }) {
-  const [mostSeen, setMostSeen] = useState(false)
-  
-  
   return (
     <>
       <Head>

@@ -6,8 +6,6 @@ import header from "../css/layout/header.module.css";
 export default function Header() {
   const router = useRouter()
 
-  console.log(router.pathname);
-
   return (
     <header className={header.header}>
       <nav>
