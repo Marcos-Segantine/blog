@@ -12,6 +12,7 @@ import { ArticlesLanguages } from "../components/ArticlesLanguages";
 export default function Home({ data }) {
   const [mostSeen, setMostSeen] = useState(false)
   
+  
   return (
     <>
       <Head>
@@ -48,7 +49,6 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  // const res = await fetch("http://localhost:3000/api/getDataToHome");
   const res = await fetch("https://www.segantine.dev/api/getDataToHome");
   const data = await res.json();
 
