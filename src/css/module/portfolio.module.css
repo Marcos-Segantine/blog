@@ -30,11 +30,49 @@
     background-color: var(--color-backgorund-dark-gray);
     width: 31%;
     height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .portfolio__projects ul li:nth-child(2),
 .portfolio__projects ul li:nth-child(5) {
     margin-top: 2.5rem;
+}
+
+.portfolio__projects__img {
+    transform: scale(5);
+    transition: all .5s;
+}
+
+.portfolio__projects li:hover .portfolio__projects__img {
+    transform: scale(5.8);
+}
+
+.portfolio__projects__img:hover {
+    transform: scale(5);
+}
+
+.portfolio__projects__overlay {
+    background-color: #18171cd6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    color: white;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.portfolio__projects li:hover .portfolio__projects__overlay {
+    visibility: visible;
+    animation: nameProjectAnimation .5s;
 }
 
 @media(min-width: 767px) {
@@ -57,5 +95,15 @@
 
     .portfolio__projects {
         width: 65%;
+    }
+}
+
+@keyframes nameProjectAnimation {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
     }
 }
