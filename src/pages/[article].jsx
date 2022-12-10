@@ -50,13 +50,12 @@ export async function getServerSideProps({ params }) {
   
   // console.log(++data[0].visits);
 
-  fetch('https://example.com/profile', {
+  fetch('https://www.segantine.dev/api/addVisits', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
   },
-  // body: {visits: JSON.stringify(data)},
-  body: {visits: ++data[0].visits, article: params.article}
+  body: {visits: ++data[0].visits, article: params.article},
 })
 
 
