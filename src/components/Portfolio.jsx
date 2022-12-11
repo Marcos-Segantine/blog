@@ -25,11 +25,21 @@ export const Portfolio = () => {
                 <span>SIGO</span>
               </Link>
             </li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
+            <li className={portfolio.portfolio__projects__nullProject}>
+              <span>Em breve</span>
+            </li>
+            <li className={portfolio.portfolio__projects__nullProject}>
+              <span>Em breve</span>
+            </li>
+            <li className={portfolio.portfolio__projects__nullProject}>
+              <span>Em breve</span>
+            </li>
+            <li className={portfolio.portfolio__projects__nullProject}>
+              <span>Em breve</span>
+            </li>
+            <li className={portfolio.portfolio__projects__nullProject}>
+              <span>Em breve</span>
+            </li>
         </ul>
       </div>
     </div>

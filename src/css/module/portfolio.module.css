@@ -55,6 +55,22 @@
     transform: scale(5);
 }
 
+.portfolio__projects__nullProject {
+    overflow: hidden;
+}
+
+.portfolio__projects__nullProject span {
+    color: var(--gray);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    transform: rotate(-40deg);
+    background-color: #131219;
+    MIN-width: 140%;
+    text-align: center;
+    padding: 1rem 0;
+    border: #9156ec solid 1px;
+}
+
 .portfolio__projects__overlay {
     background-color: #18171cd6;
     width: 100%;

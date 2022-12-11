@@ -47,6 +47,8 @@ export default function Article({ data }) {
 export async function getServerSideProps({ params }) {
   const result = await fetch(`https://www.segantine.dev/api/${params.article}`)
   const data = await result.json();
+
+  await fetch(`https://www.segantine.dev/api/addVisits`)
   
   return {
     props: {
