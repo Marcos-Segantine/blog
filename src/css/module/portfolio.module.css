@@ -63,7 +63,7 @@
     top: 0;
     bottom: 0;
     color: white;
-    font-size: 5rem;
+    font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +73,13 @@
 .portfolio__projects li:hover .portfolio__projects__overlay {
     visibility: visible;
     animation: nameProjectAnimation .5s;
+}
+
+@media(max-width: 767px) {
+    .portfolio__projects__overlay span{
+        font-size: 2rem;
+        transform: rotate(-90deg);
+    }
 }
 
 @media(min-width: 767px) {

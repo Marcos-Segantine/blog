@@ -1,6 +1,7 @@
 import portfolio from "../css/module/portfolio.module.css";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import sigoLogo from '../assets/portifolio/SIGO-logo.svg'
 
@@ -20,7 +21,9 @@ export const Portfolio = () => {
         <ul>
             <li>
               <Image className={portfolio.portfolio__projects__img} src={sigoLogo}  />
-              <span className={portfolio.portfolio__projects__overlay}>SIGO</span>
+              <Link className={portfolio.portfolio__projects__overlay} href="https://github.com/victorl1m/SIGO">
+                <span>SIGO</span>
+              </Link>
             </li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
