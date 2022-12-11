@@ -50,7 +50,7 @@ export default function Categories({ setTag }) {
             <span className={categories.categories__list__line}></span>
           </li>
           <li>
-            <p onClick={() => {setTag('python')}}>Python</p>
+            <p onClick={() => {setTag('cshrap')}}>cshrap</p>
             <span className={categories.categories__list__line}></span>
           </li>
           <li>
