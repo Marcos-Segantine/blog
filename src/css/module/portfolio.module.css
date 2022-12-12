@@ -59,11 +59,10 @@
     overflow: hidden;
 }
 
-.portfolio__projects__nullProject span {
+.portfolio__projects__nullProject div {
     color: var(--gray);
-    font-size: 2.5rem;
     text-transform: uppercase;
-    transform: rotate(-40deg);
+    transform: rotate(-30deg);
     background-color: #131219;
     MIN-width: 140%;
     text-align: center;
@@ -89,13 +88,6 @@
 .portfolio__projects li:hover .portfolio__projects__overlay {
     visibility: visible;
     animation: nameProjectAnimation .5s;
-}
-
-@media(max-width: 767px) {
-    .portfolio__projects__overlay span{
-        font-size: 2rem;
-        transform: rotate(-90deg);
-    }
 }
 
 @media(min-width: 767px) {

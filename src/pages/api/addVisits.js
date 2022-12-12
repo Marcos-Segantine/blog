@@ -9,5 +9,5 @@ export default async function getDataToHome(req, res) {
     (err, result) => {
       res.status(200).json(result);
     }
-  );
+  );  
 }

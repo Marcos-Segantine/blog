@@ -22,23 +22,23 @@ export const Portfolio = () => {
             <li>
               <Image className={portfolio.portfolio__projects__img} src={sigoLogo}  />
               <Link className={portfolio.portfolio__projects__overlay} href="https://github.com/victorl1m/SIGO">
-                <span>SIGO</span>
+                <div>SIGO</div>
               </Link>
             </li>
             <li className={portfolio.portfolio__projects__nullProject}>
-              <span>Em breve</span>
+              <div>Em breve</div>
             </li>
             <li className={portfolio.portfolio__projects__nullProject}>
-              <span>Em breve</span>
+              <div>Em breve</div>
             </li>
             <li className={portfolio.portfolio__projects__nullProject}>
-              <span>Em breve</span>
+              <div>Em breve</div>
             </li>
             <li className={portfolio.portfolio__projects__nullProject}>
-              <span>Em breve</span>
+              <div>Em breve</div>
             </li>
             <li className={portfolio.portfolio__projects__nullProject}>
-              <span>Em breve</span>
+              <div>Em breve</div>
             </li>
         </ul>
       </div>
