@@ -50,7 +50,7 @@ export async function getServerSideProps({ params }) {
 
   await fetch(`https://www.segantine.dev/api/addVisits`, {
     method: "PUT",
-    body: JSON.stringify(data[0].articles_url)    
+    body: JSON.stringify(data[0].articles_url)
   })
   
   return {
