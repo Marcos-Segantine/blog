@@ -1,4 +1,4 @@
-import db from "./database/db";
+import db from "../database/db";
 
 export default async function handler(req, res) {
   const { visits } = req.query 
