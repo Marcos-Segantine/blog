@@ -44,6 +44,27 @@
   gap: 30px;
 }
 
+.home__main__articles__filter {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+.home__main__articles__filter span {
+  color: var(--gray);
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 1rem;
+}
+
+.home__main__articles__filter__selected {
+  border-bottom: 3px solid white;
+}
+
 @media (min-width: 767px) {
   .home__main__articles {
     flex-direction: row;
@@ -53,5 +74,10 @@
 
   .home__main__filter p {
     font-size: 1.2rem;
+  }
+
+  .home__main__articles__filter span {
+    font-size: 1.3rem;
+    width: 150px;
   }
 }

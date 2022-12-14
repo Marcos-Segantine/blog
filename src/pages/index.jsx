@@ -10,6 +10,10 @@ import { Portfolio } from "../components/Portfolio";
 import { ArticlesLanguages } from "../components/ArticlesLanguages";
 
 export default function Home({ data }) {
+  const [ articleMostRecent, setArticleMostRecent ] = useState(true)
+
+  const articlesMostViwed = data.sort((a, b) => b.visits - a.visits)
+
   return (
     <>
       <Head>
@@ -24,18 +28,34 @@ export default function Home({ data }) {
         <div className={homeMain.lineTop}></div>
         <div className={homeMain.home__main__filter}>
         </div>
-        <div className={homeMain.home__main__articles}>
 
-          {data.map((data) => {
-            return (
-              <Article
-                key={data.id}
-                id={data.id}
-                linkUrl={data.articles_url}
-                title={data.title}
-              />
-            );
-          })}
+          <div className={homeMain.home__main__articles__filter}>
+            <span className={articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(!articleMostRecent)}>Mais recentes</span>
+            <span className={!articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(!articleMostRecent)}>Mais vistos</span>
+          </div>
+        <div className={homeMain.home__main__articles}>
+          
+          {
+            articleMostRecent ? 
+              (data.map(data => {
+                return(
+                  <Article
+                    key={data.id}
+                    linkUrl={data.articles_url}
+                    title={data.title} 
+                  />
+                )
+              })) : 
+              (articlesMostViwed.map(data => {
+                return(
+                  <Article
+                    key={data.id}
+                    linkUrl={data.articles_url}
+                    title={data.title} 
+                  />
+                )
+              }))
+          }  
         </div>
         
         <ArticlesLanguages data={data} />
@@ -46,7 +66,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://www.segantine.dev/api/getDataToHome");
+  const res = await fetch("https:www.segantine.dev/api/getDataToHome");
   const data = await res.json();
 
   return {
