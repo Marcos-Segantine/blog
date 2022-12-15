@@ -7,6 +7,7 @@
   width: 85%;
   gap: 30px;
   margin-top: 4rem;
+  overflow: hidden;
 }
 
 .lineTop {
@@ -44,6 +45,14 @@
   gap: 30px;
 }
 
+.home__main__articles-animation--left_to_right {
+  animation: animationArticles_left-to-right .5s;
+}
+
+.home__main__articles-animation--right_to_left {
+  animation: animationArticles_right-to-left .5s;
+}
+
 .home__main__articles__filter {
   display: flex;
   justify-content: center;
@@ -79,5 +88,23 @@
   .home__main__articles__filter span {
     font-size: 1.3rem;
     width: 150px;
+  }
+}
+
+@keyframes animationArticles_left-to-right {
+  from {
+    transform: translateX(-300%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationArticles_right-to-left {
+  from {
+    transform: translateX(300%);
+  }
+  to {
+    transform: translateX(0);
   }
 }

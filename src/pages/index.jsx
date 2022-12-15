@@ -66,10 +66,10 @@ export default function Home({ data }) {
         </div>
 
           <div className={homeMain.home__main__articles__filter}>
-            <span className={articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(!articleMostRecent)}>Mais recentes</span>
-            <span className={!articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(!articleMostRecent)}>Mais vistos</span>
+            <span className={articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(true)}>Mais recentes</span>
+            <span className={!articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(false)}>Mais vistos</span>
           </div>
-        <div className={homeMain.home__main__articles}>
+        <div className={articleMostRecent ? `${homeMain["home__main__articles"]} ${homeMain["home__main__articles-animation--left_to_right"]}` : `${homeMain["home__main__articles"]} ${homeMain["home__main__articles-animation--right_to_left"]}`}>
           
         {
           articleMostRecent ?
