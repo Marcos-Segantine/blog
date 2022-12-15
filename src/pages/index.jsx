@@ -9,46 +9,18 @@ import { IntroHome } from "../components/IntroHome";
 import { Portfolio } from "../components/Portfolio";
 import { ArticlesLanguages } from "../components/ArticlesLanguages";
 
+import { orderArtilcesByDate } from '../functions/orderArtilcesByDate'
+
 export default function Home({ data }) {
   const [ articleMostRecent, setArticleMostRecent ] = useState(true)
 
-  const articlesMostViwed = data.sort((a, b) => b.visits - a.visits)
+  const articlesOrderByMostViwed = data.sort((a, b) => b.visits - a.visits)
 
-  let articlesOrderByCreatedAt__temp = []
+  const articlesOrderByCreatedAt = orderArtilcesByDate(data)
 
-  for(let item in data) {
-    let itemTemp = data[item].createdAt
-    
-    let arr = itemTemp.split('')
-    arr.splice(4, 1)
-    arr.splice(6, 1)
-
-    arr = Number(arr.join(''))
-
-    articlesOrderByCreatedAt__temp.push({
-      createdAt: arr,
-      title: data[item].title,
-      articles_url: data[item].articles_url,
-      
-    })
-  }
-
-  articlesOrderByCreatedAt__temp = articlesOrderByCreatedAt__temp.sort((a, b) => b.createdAt - a.createdAt)
-  
-  const articlesOrderByCreatedAt = []
-
-  for(let item in articlesOrderByCreatedAt__temp) {
-
-    const arr = articlesOrderByCreatedAt__temp[item].createdAt.toString().split('')
-    arr.splice(4,0, '/')
-    arr.splice(7, 0, '/')
-    
-    articlesOrderByCreatedAt.push({
-      createdAt: arr.join(''),
-      title: articlesOrderByCreatedAt__temp[item].title,
-      articles_url: articlesOrderByCreatedAt__temp[item].articles_url,
-    })
-  }
+  const classNameArticles = articleMostRecent ?
+     `${homeMain["home__main__articles"]} ${homeMain["home__main__articles-animation--left_to_right"]}` :
+     `${homeMain["home__main__articles"]} ${homeMain["home__main__articles-animation--right_to_left"]}`
 
   return (
     <>
@@ -69,7 +41,7 @@ export default function Home({ data }) {
             <span className={articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(true)}>Mais recentes</span>
             <span className={!articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(false)}>Mais vistos</span>
           </div>
-        <div className={articleMostRecent ? `${homeMain["home__main__articles"]} ${homeMain["home__main__articles-animation--left_to_right"]}` : `${homeMain["home__main__articles"]} ${homeMain["home__main__articles-animation--right_to_left"]}`}>
+        <div className={classNameArticles}>
           
         {
           articleMostRecent ?
@@ -82,7 +54,7 @@ export default function Home({ data }) {
               />
             )
           }) : 
-          articlesMostViwed.map(data => {
+          articlesOrderByMostViwed.map(data => {
             return(
               <Article
                 key={data.title}
@@ -92,9 +64,8 @@ export default function Home({ data }) {
             )
           })
         }
-
-        </div>
         
+        </div>
         <ArticlesLanguages data={data} />
         <Portfolio />
       </main>
