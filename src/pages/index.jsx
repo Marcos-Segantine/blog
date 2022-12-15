@@ -14,6 +14,42 @@ export default function Home({ data }) {
 
   const articlesMostViwed = data.sort((a, b) => b.visits - a.visits)
 
+  let articlesOrderByCreatedAt__temp = []
+
+  for(let item in data) {
+    let itemTemp = data[item].createdAt
+    
+    let arr = itemTemp.split('')
+    arr.splice(4, 1)
+    arr.splice(6, 1)
+
+    arr = Number(arr.join(''))
+
+    articlesOrderByCreatedAt__temp.push({
+      createdAt: arr,
+      title: data[item].title,
+      articles_url: data[item].articles_url,
+      
+    })
+  }
+
+  articlesOrderByCreatedAt__temp = articlesOrderByCreatedAt__temp.sort((a, b) => b.createdAt - a.createdAt)
+  
+  const articlesOrderByCreatedAt = []
+
+  for(let item in articlesOrderByCreatedAt__temp) {
+
+    const arr = articlesOrderByCreatedAt__temp[item].createdAt.toString().split('')
+    arr.splice(4,0, '/')
+    arr.splice(7, 0, '/')
+    
+    articlesOrderByCreatedAt.push({
+      createdAt: arr.join(''),
+      title: articlesOrderByCreatedAt__temp[item].title,
+      articles_url: articlesOrderByCreatedAt__temp[item].articles_url,
+    })
+  }
+
   return (
     <>
       <Head>
@@ -35,27 +71,28 @@ export default function Home({ data }) {
           </div>
         <div className={homeMain.home__main__articles}>
           
-          {
-            articleMostRecent ? 
-              (data.map(data => {
-                return(
-                  <Article
-                    key={data.id}
-                    linkUrl={data.articles_url}
-                    title={data.title} 
-                  />
-                )
-              })) : 
-              (articlesMostViwed.map(data => {
-                return(
-                  <Article
-                    key={data.id}
-                    linkUrl={data.articles_url}
-                    title={data.title} 
-                  />
-                )
-              }))
-          }  
+        {
+          articleMostRecent ?
+          articlesOrderByCreatedAt.map(data => {
+            return(
+              <Article
+                key={data.title}
+                title={data.title}
+                linkUrl={data.articles_url}
+              />
+            )
+          }) : 
+          articlesMostViwed.map(data => {
+            return(
+              <Article
+                key={data.title}
+                title={data.title}
+                linkUrl={data.articles_url}
+              />
+            )
+          })
+        }
+
         </div>
         
         <ArticlesLanguages data={data} />
