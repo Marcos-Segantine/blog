@@ -38,8 +38,14 @@ export default function Home({ data }) {
         </div>
 
           <div className={homeMain.home__main__articles__filter}>
-            <span className={articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(true)}>Mais recentes</span>
-            <span className={!articleMostRecent ? homeMain.home__main__articles__filter__selected : ""} onClick={() => setArticleMostRecent(false)}>Mais vistos</span>
+            <span onClick={() => setArticleMostRecent(true)}>
+              Mais recentes
+              <span className={articleMostRecent ? homeMain.home__main__articles__filter__selected_right_to_left : ""}></span>
+            </span>
+            <span onClick={() => setArticleMostRecent(false)}>
+              Mais vistos
+              <span className={!articleMostRecent ? homeMain.home__main__articles__filter__selected_left_to_right : ""}></span>
+            </span>
           </div>
         <div className={classNameArticles}>
           
