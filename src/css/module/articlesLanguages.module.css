@@ -55,7 +55,7 @@
 @media(min-width: 1023px) {
     .articles_languages__content {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: stretch;
     }
     
@@ -64,8 +64,8 @@
     }   
 }
 
-/* @media(max-width: 1023px) {
+@media(max-width: 1023px) {
     .articles_languages__content__article:last-child {
         display: none;
     }
-} */
+}
