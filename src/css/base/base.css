@@ -117,6 +117,30 @@ iframe {
   width: 100%;
 }
 
+.token-variable {
+  color: #ef5955
+}
+
+.token-class_number {
+  color: #ca8f41;
+}
+
+.token-function {
+  color: #3aadf2;
+}
+
+.token-punctuation {
+  color: #f1d70a;
+}
+
+.token-string {
+  color: #98c379;
+}
+
+.comment {
+  color: #6a6f78;
+}
+
 @media(min-width: 767px) {
   div[class="container-code"] code {
     font-size: 1rem;
