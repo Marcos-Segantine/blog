@@ -21,6 +21,7 @@ export default function Article({ data }) {
     <div className={article.article}>
       <Head>
         <title>{data.title}</title>
+        <meta name="description" content={data.resume} />
       </Head>
 
       <div className={article.article__content}>
