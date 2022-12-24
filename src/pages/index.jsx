@@ -57,6 +57,7 @@ export default function Home({ data }) {
                 key={data.title}
                 title={data.title}
                 linkUrl={data.articles_url}
+                meta={data.meta}
               />
             )
           }) : 
@@ -66,6 +67,7 @@ export default function Home({ data }) {
                 key={data.title}
                 title={data.title}
                 linkUrl={data.articles_url}
+                meta={data.resume}
               />
             )
           })

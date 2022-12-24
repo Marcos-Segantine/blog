@@ -2,7 +2,7 @@ import averageArticle from "../css/module/articleHome.module.css";
 
 import Link from "next/link";
 
-export default function ArticleHome({ linkUrl, title }) {
+export default function ArticleHome({ linkUrl, title, meta }) {
   return (
     <div className={averageArticle.average_article}>
       <Link href={linkUrl}>
@@ -11,9 +11,7 @@ export default function ArticleHome({ linkUrl, title }) {
 
       <Link href={linkUrl}>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit fugit
-          voluptatem saepe pariatur facilis assumenda reiciendis commodi sit
-          tempore aliquid?
+          {meta}
         </p>
       </Link>
     </div>
