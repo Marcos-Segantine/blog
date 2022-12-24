@@ -26,6 +26,7 @@ export const orderArtilcesByDate = (data) => {
       createdAt: arr.join(''),
       title: data[item].title,
       articles_url: data[item].articles_url,
+      resume: data[item].resume
     })
   }
 
