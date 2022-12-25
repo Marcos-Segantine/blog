@@ -21,7 +21,7 @@ export default function AllArticles({ data }) {
   const [btnBackToTop, setBtnBackToTop] = useState(false);
 
   useEffect(() => {
-    const handleScroll = (event) => {
+    const handleScroll = () => {
       const scroll = window.scrollY;
 
       if (scroll > 1200) setBtnBackToTop(true);
@@ -40,6 +40,7 @@ export default function AllArticles({ data }) {
       <div className={allArticles.all_articles}>
         <Head>
           <title>Todos os Artigos</title>
+          <meta name="description" content="Confira artigos simples e diretos sobre programação" />
         </Head>
 
         <div className={allArticles.gif}>
@@ -71,6 +72,7 @@ export default function AllArticles({ data }) {
                   linkUrl={data.articles_url}
                   title={data.title}
                   tags={data.tags}
+                  meta={data.resume}
                 />
                 );
               }
