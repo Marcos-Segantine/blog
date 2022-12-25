@@ -7,19 +7,28 @@ import Tags from './Tags'
 export const ArticlesLanguages = ({ data }) => {
     
     const dataJavaScript = data.filter(element => element.tags.includes("JavaScript"))
+    const resumeJavaScript = dataJavaScript.map(data => {
+        if(data.resume.split('').length > 150) return data.resume.split('').slice(0, 150).join('') + "..."
+        else return data.resume
+    })
+
     const dataReact = data.filter(element => element.tags.includes("React"))
+    const resumeReact = dataReact.map(data => {
+        if(data.resume.split('').length > 150) return data.resume.split('').slice(0, 150).join('') + "..."
+        else return data.resume
+    })
 
     return(
         <div className={articlesLanguages.articles_languages}>
             <h4 className={articlesLanguages.articles_languages__language}>JavaScript</h4>
             <div className={articlesLanguages.articles_languages__content}>
                 {
-                dataJavaScript.map(data => {
+                dataJavaScript.map((data, index) => {
                     return(
                         <Link key={data.id} href={data.articles_url} className={articlesLanguages.articles_languages__content__article}>
                             <Tags data={data.tags} />
                             <h3>{data.title}</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi autem sit itaque rem tempore quidem, hic exercitationem numquam minima quia quod iure voluptate laborum, molestias sed dignissimos illum necessitatibus?</p>
+                            <p>{resumeJavaScript[index]}</p>
                             <span className={articlesLanguages.articles_languages__content__article__date}>{data.createdAt}</span>
                         </Link>
                         )
@@ -36,7 +45,7 @@ export const ArticlesLanguages = ({ data }) => {
                             <Link key={data.id} href={data.articles_url} className={articlesLanguages.articles_languages__content__article}>
                                 <Tags data={data.tags} />
                                 <h3>{data.title}</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi autem sit itaque rem tempore quidem, hic exercitationem numquam minima quia quod iure voluptate laborum, molestias sed dignissimos illum necessitatibus?</p>
+                                <p>{data.resume}</p>
                                 <span className={articlesLanguages.articles_languages__content__article__date}>{data.createdAt}</span>
                             </Link>        
                         )
