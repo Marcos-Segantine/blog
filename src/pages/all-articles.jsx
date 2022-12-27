@@ -4,7 +4,7 @@ import Head from "next/head";
 import allArticles from "../css/layout/allArticles.module.css";
 import input from "../css/module/input.module.css";
 
-import Article from '../components/ArticleHome'
+import { MainArticles } from "../components/MainArticles";
 import Categories from "../components/Categories";
 
 import searchIcon from "../images/icons/icon-search.png";
@@ -67,7 +67,7 @@ export default function AllArticles({ data }) {
           {data.map((data) => {
             if (data.title.toLowerCase().includes(searchArticle.toLowerCase().trim()) || data.tags.toLowerCase().includes(searchArticle.toLowerCase().trim()) || tag === data.tags) {
               return (
-                <Article
+                <MainArticles
                   key={data.id}
                   linkUrl={data.articles_url}
                   title={data.title}

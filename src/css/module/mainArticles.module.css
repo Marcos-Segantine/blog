@@ -1,14 +1,14 @@
-.average_article {
+.article {
   transition: all .5s;
   background-color: #18171C;
   padding: 0 2rem 2rem;
 }
 
-.average_article:hover {
+.article:hover {
   transform: translateX(3%);
 }
 
-.average_article h5 {
+.article h5 {
   height: max-content;
   margin-bottom: 1.5rem;
 }
@@ -21,7 +21,7 @@
 }
 
 @media (min-width: 767px) {
-  .average_article {
+  .article {
     width: 35%;
   }
 }

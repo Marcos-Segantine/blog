@@ -1,10 +1,10 @@
-import averageArticle from "../css/module/articleHome.module.css";
+import article from "../css/module/mainArticles.module.css";
 
 import Link from "next/link";
 
-export default function ArticleHome({ linkUrl, title, meta }) {
+export function MainArticles({ linkUrl, title, meta }) {
   return (
-    <div className={averageArticle.average_article}>
+    <div className={article.article}>
       <Link href={linkUrl}>
         <h5>{title}</h5>
       </Link>

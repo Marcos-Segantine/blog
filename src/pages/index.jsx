@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import homeMain from "../css/module/homeMain.module.css";
 
-import Article from "../components/ArticleHome";
+import { MainArticles } from "../components/MainArticles";
 import { IntroHome } from "../components/IntroHome";
 import { Portfolio } from "../components/Portfolio";
 import { ArticlesLanguages } from "../components/ArticlesLanguages";
@@ -53,7 +53,7 @@ export default function Home({ data }) {
           articleMostRecent ?
           articlesOrderByCreatedAt.map(data => {
             return(
-              <Article
+              <MainArticles
                 key={data.title}
                 title={data.title}
                 linkUrl={data.articles_url}
@@ -63,7 +63,7 @@ export default function Home({ data }) {
           }) : 
           articlesOrderByMostViwed.map(data => {
             return(
-              <Article
+              <MainArticles
                 key={data.title}
                 title={data.title}
                 linkUrl={data.articles_url}
