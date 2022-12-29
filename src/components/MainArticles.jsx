@@ -3,6 +3,9 @@ import article from "../css/module/mainArticles.module.css";
 import Link from "next/link";
 
 export function MainArticles({ linkUrl, title, meta }) {
+
+  const text = meta.split('').length > 250 ? meta.split('').slice(0, 250).join('') + "..." : meta
+
   return (
     <div className={article.article}>
       <Link href={linkUrl}>
@@ -11,7 +14,7 @@ export function MainArticles({ linkUrl, title, meta }) {
 
       <Link href={linkUrl}>
         <p>
-          {meta}
+          {text}
         </p>
       </Link>
     </div>
